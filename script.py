@@ -93,7 +93,7 @@ html_content = html_template.render(
 
 # Create MIME message
 msg = MIMEMultipart('alternative')
-msg['Subject'] = f"Let’s connect, {contact_person}"
+msg['Subject'] = f"Quick question for {contact_person}"
 msg['From'] = EMAIL_ADDRESS
 msg['To'] = recipient_email
 msg.attach(MIMEText(html_content, 'html'))

@@ -5,8 +5,7 @@ import csv, os
 
 app = Flask(__name__)
 
-OPEN_LOG_FILE = "open_log.csv"
-CLICK_LOG_FILE = "click_log.csv"
+OPEN_LOG_FILE = "/tmp/open_log.csv"
 
 @app.route("/openlog/<lead_id>")
 def open_log(lead_id):
