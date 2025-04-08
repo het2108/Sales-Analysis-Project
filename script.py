@@ -87,7 +87,8 @@ with open("email_template.html", "r") as file:
 # Render personalized content
 html_content = html_template.render(
     contact_person=contact_person,
-    company_name=company_name
+    company_name=company_name,
+    lead_id=recipient_email
 )
 
 # Create MIME message

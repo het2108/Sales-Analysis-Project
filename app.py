@@ -15,13 +15,13 @@ def open_log(lead_id):
         writer.writerow([lead_id, datetime.now(), request.remote_addr])
     return send_file("static/1x1.png", mimetype="image/png")
 
-@app.route("/clicklog/<lead_id>")
-def click_log(lead_id):
-    redirect_url = request.args.get("redirect", "")
-    with open(CLICK_LOG_FILE, "a", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow([lead_id, datetime.now(), request.remote_addr, redirect_url])
-    return redirect(redirect_url)
+# @app.route("/clicklog/<lead_id>")
+# def click_log(lead_id):
+#     redirect_url = request.args.get("redirect", "")
+#     with open(CLICK_LOG_FILE, "a", newline="") as file:
+#         writer = csv.writer(file)
+#         writer.writerow([lead_id, datetime.now(), request.remote_addr, redirect_url])
+#     return redirect(redirect_url)
 
 if __name__ == "__main__":
     os.makedirs("static", exist_ok=True)
