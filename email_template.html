@@ -31,7 +31,6 @@
 
 <body>
     <div class="container">
-        <img src="https://yourserver.com/track/open/{{lead_id}}" width="1" height="1" style="display:none;">
 
         <p>Hi {{contact_person}},</p>
 
@@ -45,9 +44,13 @@
 
         <p>Let me know what time works best for you, or feel free to book directly using the link below.</p>
 
-        <a href="#" class="cta-button">Book a Free Consultation</a>
+        <a href="https://your-domain.com/clicklog/{{lead_id}}?redirect=https://your-cta-link.com"
+            style="background-color:#4CAF50;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;">
+            Let's Connect
+        </a>
 
-        <p>Looking forward to connecting!</p>
+        <!-- Tracking Pixel -->
+        <img src="https://your-domain.com/openlog/{{lead_id}}" width="1" height="1" style="display:none;" />
 
         <p>Best regards,<br>
             HET THAKKAR<br>
