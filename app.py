@@ -9,11 +9,14 @@ OPEN_LOG_FILE = "/tmp/open_log.csv"
 
 @app.route("/openlog/<lead_id>")
 def open_log(lead_id):
-    with open(OPEN_LOG_FILE, "a", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow([lead_id, datetime.now(), request.remote_addr])
+    try:
+        with open(OPEN_LOG_FILE, "a", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([lead_id, datetime.now(), request.remote_addr])
+        print(f"Logged open for {lead_id}")
+    except Exception as e:
+        print(f"Error logging open: {e}")
     return send_file("static/1x1.png", mimetype="image/png")
-
 # @app.route("/clicklog/<lead_id>")
 # def click_log(lead_id):
 #     redirect_url = request.args.get("redirect", "")
